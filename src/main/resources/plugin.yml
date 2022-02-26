@@ -1,0 +1,6 @@
+name: NoXplosion
+version: '${project.version}'
+main: kettash.noxplosion.NoXplosion
+api-version: 1.18
+authors: [ kettash ]
+description: No a a
