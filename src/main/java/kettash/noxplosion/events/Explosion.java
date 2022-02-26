@@ -13,29 +13,24 @@ public class Explosion implements Listener {
 
     // Preventing creeper's explosion damaging blocks
     @EventHandler
-    public boolean mobexplodes(EntityExplodeEvent e){
+    public void mobexplodes(EntityExplodeEvent e){
 
         EntityType entity = e.getEntity().getType();
 /*        if (entity.equals(EntityType.CREEPER) || entity.equals(EntityType.WITHER) || entity.equals(EntityType.WITHER_SKULL)) {
             // clear the targeted blocks list
             e.blockList().clear();
         }*/
-
         if (entity.equals(EntityType.CREEPER)) {
             // clear the targeted blocks list
             e.blockList().clear();
         }
-
-        return true;
     }
 
     // Preventing endermen to move blocks
     @EventHandler
-    public boolean endermanChangeBlock(EntityChangeBlockEvent e) {
+    public void endermanChangeBlock(EntityChangeBlockEvent e) {
         if(e.getEntityType().equals(EntityType.ENDERMAN)) {
             e.setCancelled(true);
         }
-
-        return true;
     }
 }
